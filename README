@@ -1,0 +1,15 @@
+* Prerequisites
+
+  git, python >= 2.7, libudev-devel (for cor), cmake >= 2.8, g++ >= 4.6, qt 5.2
+
+* To build cutes:
+
+  # ./build-all.sh <path-to-qt-root-dir>
+
+* To reproduce previous segfault (problem with protos fixed by tronical):
+
+  # ./cutes-exec-test.sh
+
+* To reproduce new segfault:
+
+  # ./reproduce-vault-issue.sh
