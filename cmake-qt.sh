@@ -20,5 +20,5 @@ find ${QTDIR}/lib/cmake -type d -exec bash -c 'set_mod_path "{}"' \;
 # | xargs -0 bash -c 'set_mod_path "$@"'
 export CMAKE_MODULE_PATH=`cat $STORAGE`
 export PATH=${QTDIR}/bin:${PATH}
-cmake --trace  . ${@:2}
+cmake . ${@:2}
 rm $STORAGE
