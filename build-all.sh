@@ -56,10 +56,18 @@ function build_cor {
         make install DESTDIR=$DEST
 }
 
+function build_cutes_js {
+    echo "Building cutes-js"
+    cd $ROOT_DIR/cutes-js && \
+        $CMAKE_QT5 -DCMAKE_INSTALL_PREFIX:PATH=$PREFIX -DVERSION=0.9.8 && \
+        make $JOBS && \
+        make install DESTDIR=$DEST
+}
+
 function build_cutes {
     echo "Building cutes"
     cd $ROOT_DIR/cutes && \
-        $CMAKE_QT5 -DCMAKE_INSTALL_PREFIX:PATH=$PREFIX -DCUTES_VERSION=0.9.8 && \
+        $CMAKE_QT5 -DCMAKE_INSTALL_PREFIX:PATH=$PREFIX -DVERSION=0.9.8 && \
         make $JOBS && \
         make install DESTDIR=$DEST
 }
@@ -77,6 +85,7 @@ function build_the_vault {
     clone_all && \
     build_tut && \
     build_cor && \
+    build_cutes_js && \
     build_the_vault && \
     build_cutes
 
